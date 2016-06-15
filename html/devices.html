@@ -9,18 +9,29 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     
     <script>
-        function loadDoc() {
+        function loadHeader() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                   document.getElementById("header").innerHTML = xhttp.responseText;
+                }
+            };
+            xhttp.open("GET", "../php/header.php" , true);
+            xhttp.send();
+        }
+        
+        function loadDevices() {
           var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
-             loadder(xhttp.responseText);
+             parseDevices(xhttp.responseText);
             }
           };
           xhttp.open("GET", "../php/devices.php", true);
           xhttp.send();
         }
 
-        function loadder(response) {
+        function parseDevices(response) {
             var arr = JSON.parse(response);
             var i;
             var out = "";
@@ -36,30 +47,16 @@
                 out += "</div>";
             }
             document.getElementById("device").innerHTML = out;
-        }
+        } 
     </script>
-    
 </head>
 
-<body>
-    <header>
-        <div class="wrapper">
-            <a href="index.html"><img src="../img/tim_logo.png" class="logo"></a>
-            <a href="#" class="hamburger"></a>
-            <nav>
-                <ul>
-                    <li><a href="#">Plans</a></li>
-                    <li><a href="#">Devices</a></li>
-                    <li><a href="#">Smart Life</a></li>
-                    <li><a href="#">Assistance</a></li>
-                    <li><a href="#">Who We Are</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>  
+<body onload = "loadHeader()">
+    
+    <header onload="loadDevices()" id="header"></header>  
     
     <h1 class = "category_title">Smartphone</h1>
-        <div >
+    <div >
         <div class = "col-sm-3">
             <h2 class="filter_title">Filter</h2>
             <div class="panel_filter  panel-primary">            
@@ -77,58 +74,12 @@
                 </div>
                 
                 <hr class="line">
-                
-                <div class="panel-body">
-                    <h4 class = "filter_category">filter</h4>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio" value="">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio"value="">Option 2</label>
-                    </div>
-                    <div class="radio disabled">
-                        <label><input type="radio" name="optradio" value="">Option 3</label>
-                    </div>
-                </div>
-                
-                <hr class="line">
-                
-                <div class="panel-body">
-                    <h4 class = "filter_category">filter</h4>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio" value="">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio"value="">Option 2</label>
-                    </div>
-                    <div class="radio disabled">
-                        <label><input type="radio" name="optradio" value="">Option 3</label>
-                    </div>
-                </div>
-                
-                <hr class="line">
-                
-                <div class="panel-body">
-                    <h4 class = "filter_category">filter</h4>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio" value="">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio"value="">Option 2</label>
-                    </div>
-                    <div class="radio disabled">
-                        <label><input type="radio" name="optradio" value="">Option 3</label>
-                    </div>
-                </div>
-               
             </div>
-    </div>
-        
-     <script language="javascript">
-            Event.observe(this, 'load', loadDoc());    
-     </script>
-     <div id="device" class="col-sm-9">  </div>
-            
+        <script language="javascript">
+            Event.observe(this, 'load', loadDevices());    
+        </script>
+        </div>
+        <div id="device" class="col-sm-9"></div>
     </div>
 </body>
 
