@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 07, 2016 alle 11:03
+-- Creato il: Giu 15, 2016 alle 16:36
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
@@ -134,7 +134,7 @@ CREATE TABLE `device` (
   `idDevice` int(11) NOT NULL,
   `nome` text NOT NULL,
   `costo` float NOT NULL,
-  `immagine` int(11) NOT NULL,
+  `immagine` text NOT NULL,
   `categoria` int(11) NOT NULL,
   `descrizione` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -144,9 +144,16 @@ CREATE TABLE `device` (
 --
 
 INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `descrizione`) VALUES
-(1, 'Samsung Galaxy S7', 829.9, 0, 1, 'Samsung Galaxy S7 Edge è uno smarthphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati!'),
-(2, 'Apple iPad Pro 9.7" 128 GB', 1019.9, 0, 3, 'Con iPad hai scoperto un mondo completamente nuovo, semplice e coinvolgente. Oggi iPad Pro, con la tecnologia Multi-Touch perfezionata, il suo grande display Retina da 12.9" e prestazioni della CPU quasi raddoppiate rispetto a iPad Air 2, è pronto ad allargare ancora una volta i tuoi orizzonti!'),
-(3, 'iPhone 6', 989.9, 0, 1, 'iPhone 6 non è solo più grande: è ancora migliore, da ogni punto di vista. Più grande, eppure più sottile. Più potente, ma attento nei consumi. È una nuova generazione di iPhone.\r\n');
+(1, 'Samsung Galaxy S7', 829.9, '../img/samsungs7.jpg', 1, 'Samsung Galaxy S7 Edge è uno smarthphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati!'),
+(2, 'Apple iPad Pro 9.7" 128 GB', 1019.9, '../img/ipad.jpg', 3, 'Con iPad hai scoperto un mondo completamente nuovo, semplice e coinvolgente. Oggi iPad Pro, con la tecnologia Multi-Touch perfezionata, il suo grande display Retina da 12.9" e prestazioni della CPU quasi raddoppiate rispetto a iPad Air 2, è pronto ad allargare ancora una volta i tuoi orizzonti!'),
+(3, 'Apple iPhone 6', 989.9, '../img/iphone.jpg', 1, 'iPhone 6 non è solo più grande: è ancora migliore, da ogni punto di vista. Più grande, eppure più sottile. Più potente, ma attento nei consumi. È una nuova generazione di iPhone.\r\n'),
+(4, 'Microsoft Lumia 950', 689.9, '../img/lumia950.jpg', 1, 'Microsoft Lumia 950 è uno cellulare Touchscreen avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.2 pollici e di una risoluzione da 2560x1440 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo Microsoft Lumia 950 sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
+(5, 'LG G5', 559.9, '../img/lgg5.jpg', 1, 'LG G5 è uno smartphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati. Dispone di un grande display da 5.3 pollici e di una risoluzione da 2560x1440 pixel, fra le più elevate attualmente in circolazione. Le funzionalità offerte da questo LG G5 sono innumerevoli e tutte al top di gamma. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. '),
+(6, 'Huawey P9', 349.9, '../img/huaweyp9.jpg', 1, 'Huawei P9 è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.2 pollici e di una risoluzione da 1920x1080 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo Huawei P9 sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
+(7, 'Nexus 5x', 499.9, '../img/nexus5x.jpg', 1, 'LG Nexus 5X è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.2 pollici e di una risoluzione da 1920x1080 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo LG Nexus 5X sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
+(8, 'Yotaphone 2 32Gb', 390.9, '../img/yotaphone.jpg', 1, 'YotaPhone 2 è un smartphone Android di buon livello, fortemente votato all''imaging, in grado di soddisfare anche l''utente più esigente. Dispone di un grande display Touchscreen da 5 pollici con una risoluzione di 1920x1080 pixel. Sul versante delle funzionalità a questo YotaPhone 2 non manca davvero nulla. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. '),
+(9, 'Asus ZenPhone 2', 299.9, '../img/asus.jpg', 1, 'Asus ZenFone 2 ZE551ML è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.5 pollici e di una risoluzione da 1920x1080 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo Asus ZenFone 2 ZE551ML sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
+(10, 'Samsung Galaxy A3', 199.9, '../img/galaxia3.jpg', 1, 'Samsung Galaxy A3 è un smartphone Android completo, che non ha molto da invidare ai dispositivi più avanzati. Dispone di un display Touchscreen da 4.5 pollici con una risoluzione di 960x540 pixel non particolarmente elevata. Sul versante delle funzionalità a questo Samsung Galaxy A3 non manca davvero nulla. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. ');
 
 -- --------------------------------------------------------
 
