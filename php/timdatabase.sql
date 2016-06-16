@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 15, 2016 alle 16:36
+-- Creato il: Giu 16, 2016 alle 21:01
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
@@ -193,6 +193,43 @@ CREATE TABLE `faq` (
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `filter`
+--
+
+CREATE TABLE `filter` (
+  `id` int(11) NOT NULL,
+  `nome` text CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci NOT NULL,
+  `tipo` tinyint(1) NOT NULL,
+  `value` int(11) NOT NULL,
+  `categoria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `filter`
+--
+
+INSERT INTO `filter` (`id`, `nome`, `tipo`, `value`, `categoria`) VALUES
+(1, 'Tipologia', 1, 0, 1),
+(2, 'Promozione', 0, 1, 1),
+(3, 'Novita''', 0, 2, 1),
+(4, 'Marca', 1, 0, 1),
+(5, 'Samsung', 0, 1, 1),
+(6, 'Apple', 0, 2, 1),
+(7, 'LG', 0, 3, 1),
+(8, 'Altri', 0, 4, 1),
+(9, 'Display', 1, 0, 1),
+(10, 'meno di 5 pollici', 0, 1, 1),
+(11, 'piu'' di 5 pollici', 0, 2, 1),
+(12, 'Connessione', 1, 0, 1),
+(13, '3G', 0, 1, 1),
+(14, '4G LTE', 0, 2, 1),
+(15, 'Fotocamera', 1, 0, 1),
+(16, 'tra 2MP e 8MP', 0, 1, 1),
+(17, 'piu'' di 8MP', 0, 2, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `plans`
 --
 
@@ -349,6 +386,12 @@ ALTER TABLE `deviceconsigliati`
 -- Indici per le tabelle `faq`
 --
 ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `filter`
+--
+ALTER TABLE `filter`
   ADD PRIMARY KEY (`id`);
 
 --

@@ -4,83 +4,37 @@
     <meta charset="UTF-8">
     <title>Devices</title>
     <meta name="author" content="Gianluca Ferrari, Diego Gaboardi, Andrea Facchini">
+    <script src = "../script/header.js"></script>
+    <script src = "../script/loaderDevices.js"></script>
+    <script src = "../script/loadFilter.js"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/style_device.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    
-    <script>
-        function loadHeader() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                   document.getElementById("header").innerHTML = xhttp.responseText;
-                }
-            };
-            xhttp.open("GET", "../php/header.php" , true);
-            xhttp.send();
-        }
-        
-        function loadDevices() {
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
-             parseDevices(xhttp.responseText);
-            }
-          };
-          xhttp.open("GET", "../php/devices.php", true);
-          xhttp.send();
-        }
-
-        function parseDevices(response) {
-            var arr = JSON.parse(response);
-            var i;
-            var out = "";
-            
-            for(i = 0; i < arr.length; i++) {
-                out += "<div class=\"col-sm-4\">";
-                   out += "<div class=\"panel_box panel-primary\">";
-                   out += "<h3 class= \"device_title\">";
-                       out += arr[i].nome;
-                   out += "</h3>";
-                   out += "<img src=\"" + arr[i].immagine + "\" class=\"img_device\" width=\"100%\" > <br>";
-                   out += "<button type=\"button\" class=\"btn btn-default btn-block\">More details</button></div>";
-                out += "</div>";
-            }
-            document.getElementById("device").innerHTML = out;
-        } 
-    </script>
 </head>
 
 <body onload = "loadHeader()">
+    
+    <script language="javascript">
+            Event.observe(this, 'load', loadDevices());    
+    </script>
+    
+    <script language="javascript">
+            Event.observe(this, 'load', loadFilter());    
+    </script>
     
     <header onload="loadDevices()" id="header"></header>  
     
     <h1 class = "category_title">Smartphone</h1>
     <div >
-        <div class = "col-sm-3">
+        <div  class = "col-sm-3">
             <h2 class="filter_title">Filter</h2>
-            <div class="panel_filter  panel-primary">            
-                <div class="panel-body">
-                    <h4 class = "filter_category">filter</h4>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio" value="">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio"value="">Option 2</label>
-                    </div>
-                    <div class="radio disabled">
-                        <label><input type="radio" name="optradio" value="">Option 3</label>
-                    </div>
-                </div>
-                
-                <hr class="line">
+            <div  class="panel_filter  panel-primary"> 
+                <div id = "filter"></div>
+                <button type="button" class="btn btn-default btn-block">Submit</button></div>
             </div>
-        <script language="javascript">
-            Event.observe(this, 'load', loadDevices());    
-        </script>
         </div>
-        <div id="device" class="col-sm-9"></div>
-    </div>
+    <div id="device" class="col-sm-9"></div>
+    
 </body>
-
+    
 </html>
