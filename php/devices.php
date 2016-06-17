@@ -11,7 +11,8 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$query = "SELECT nome, immagine FROM device, categoriedevice WHERE categoria=id and id = 1";
+$id = $_GET[("id")];
+$query = "SELECT nome, immagine FROM device, categoriedevice WHERE categoria=id and id = ".$id ;
 /*
 $tipologia = $_GET["tipologia"];
 $marca = $_GET["marca"];

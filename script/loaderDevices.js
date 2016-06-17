@@ -5,7 +5,8 @@ function loadDevices() {
      parseDevices(xhttp.responseText);
     }
   };
-  xhttp.open("GET", "../php/devices.php", true);
+  var id = location.search.split('id=')[1];
+  xhttp.open("GET", "../php/devices.php?id=" + id, true);
   xhttp.send();
 }
 

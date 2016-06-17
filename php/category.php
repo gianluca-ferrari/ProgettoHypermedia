@@ -11,10 +11,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-
-$id = $_GET[("id")];
-$query = "SELECT tipo, value, nome FROM filter WHERE categoria=".$id;
-
+$query = "SELECT name, id FROM categoriedevice";
 $sql = $query;
 $result = $conn->query($sql);
 

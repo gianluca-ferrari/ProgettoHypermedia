@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 16, 2016 alle 21:01
--- Versione del server: 10.1.13-MariaDB
--- Versione PHP: 5.6.21
+-- Generation Time: Jun 17, 2016 at 04:16 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `assistance`
+-- Table structure for table `assistance`
 --
 
 CREATE TABLE `assistance` (
@@ -36,7 +36,7 @@ CREATE TABLE `assistance` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `caratteristichesl`
+-- Table structure for table `caratteristichesl`
 --
 
 CREATE TABLE `caratteristichesl` (
@@ -46,7 +46,7 @@ CREATE TABLE `caratteristichesl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `caratteristichesl`
+-- Dumping data for table `caratteristichesl`
 --
 
 INSERT INTO `caratteristichesl` (`id`, `nome`, `immagine`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `caratteristichesl` (`id`, `nome`, `immagine`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `categorieassistenza`
+-- Table structure for table `categorieassistenza`
 --
 
 CREATE TABLE `categorieassistenza` (
@@ -70,30 +70,29 @@ CREATE TABLE `categorieassistenza` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `categoriedevice`
+-- Table structure for table `categoriedevice`
 --
 
 CREATE TABLE `categoriedevice` (
   `id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `image` int(11) NOT NULL
+  `name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `categoriedevice`
+-- Dumping data for table `categoriedevice`
 --
 
-INSERT INTO `categoriedevice` (`id`, `name`, `image`) VALUES
-(1, 'smarthphone', 0),
-(2, 'smarthwatch', 0),
-(3, 'tablet', 0),
-(4, 'smart living', 0),
-(5, 'promotions', 0);
+INSERT INTO `categoriedevice` (`id`, `name`) VALUES
+(1, 'smartphone'),
+(2, 'smartwatch'),
+(3, 'tablet'),
+(4, 'smart living'),
+(5, 'promotions');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `categorieplans`
+-- Table structure for table `categorieplans`
 --
 
 CREATE TABLE `categorieplans` (
@@ -105,7 +104,7 @@ CREATE TABLE `categorieplans` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `categoriesl`
+-- Table structure for table `categoriesl`
 --
 
 CREATE TABLE `categoriesl` (
@@ -115,7 +114,7 @@ CREATE TABLE `categoriesl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `categoriesl`
+-- Dumping data for table `categoriesl`
 --
 
 INSERT INTO `categoriesl` (`id`, `nome`, `immagine`) VALUES
@@ -127,7 +126,7 @@ INSERT INTO `categoriesl` (`id`, `nome`, `immagine`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `device`
+-- Table structure for table `device`
 --
 
 CREATE TABLE `device` (
@@ -140,7 +139,7 @@ CREATE TABLE `device` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `device`
+-- Dumping data for table `device`
 --
 
 INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `descrizione`) VALUES
@@ -158,7 +157,7 @@ INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `des
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `devicecompresi`
+-- Table structure for table `devicecompresi`
 --
 
 CREATE TABLE `devicecompresi` (
@@ -169,7 +168,7 @@ CREATE TABLE `devicecompresi` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `deviceconsigliati`
+-- Table structure for table `deviceconsigliati`
 --
 
 CREATE TABLE `deviceconsigliati` (
@@ -180,7 +179,7 @@ CREATE TABLE `deviceconsigliati` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `faq`
+-- Table structure for table `faq`
 --
 
 CREATE TABLE `faq` (
@@ -193,7 +192,7 @@ CREATE TABLE `faq` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `filter`
+-- Table structure for table `filter`
 --
 
 CREATE TABLE `filter` (
@@ -205,7 +204,7 @@ CREATE TABLE `filter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `filter`
+-- Dumping data for table `filter`
 --
 
 INSERT INTO `filter` (`id`, `nome`, `tipo`, `value`, `categoria`) VALUES
@@ -225,12 +224,40 @@ INSERT INTO `filter` (`id`, `nome`, `tipo`, `value`, `categoria`) VALUES
 (14, '4G LTE', 0, 2, 1),
 (15, 'Fotocamera', 1, 0, 1),
 (16, 'tra 2MP e 8MP', 0, 1, 1),
-(17, 'piu'' di 8MP', 0, 2, 1);
+(17, 'piu'' di 8MP', 0, 2, 1),
+(18, 'Tipologia', 1, 0, 2),
+(19, 'Promozione', 0, 1, 2),
+(20, 'Novita''', 0, 2, 2),
+(21, 'Marca', 1, 0, 2),
+(22, 'Samsung', 0, 1, 2),
+(23, 'polar', 0, 2, 2),
+(24, 'Altri', 0, 3, 2),
+(25, 'Tipologia', 1, 0, 3),
+(26, 'Promozione', 0, 1, 3),
+(27, 'Novita''', 0, 2, 3),
+(28, 'Marca', 1, 0, 3),
+(29, 'Samsung', 0, 1, 3),
+(30, 'Apple', 0, 2, 3),
+(31, 'Altri', 0, 3, 3),
+(32, 'Tipologia', 1, 0, 4),
+(33, 'Promozione', 0, 1, 4),
+(34, 'Novita''', 0, 2, 4),
+(35, 'Marca', 1, 0, 4),
+(36, 'Beats', 0, 1, 4),
+(37, 'D-Link', 0, 2, 4),
+(38, 'Altri', 0, 3, 4),
+(39, 'Tipologia', 1, 0, 5),
+(40, 'Promozione', 0, 1, 5),
+(41, 'Novita''', 0, 2, 5),
+(42, 'Marca', 1, 0, 5),
+(43, 'Samsung', 0, 1, 5),
+(44, 'Apple', 0, 2, 5),
+(45, 'Altri', 0, 3, 5);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `plans`
+-- Table structure for table `plans`
 --
 
 CREATE TABLE `plans` (
@@ -247,7 +274,7 @@ CREATE TABLE `plans` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `plans_device`
+-- Table structure for table `plans_device`
 --
 
 CREATE TABLE `plans_device` (
@@ -258,7 +285,7 @@ CREATE TABLE `plans_device` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `slservices`
+-- Table structure for table `slservices`
 --
 
 CREATE TABLE `slservices` (
@@ -270,7 +297,7 @@ CREATE TABLE `slservices` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `slservices`
+-- Dumping data for table `slservices`
 --
 
 INSERT INTO `slservices` (`id`, `nome`, `costo`, `immagine`, `categoria`) VALUES
@@ -282,7 +309,7 @@ INSERT INTO `slservices` (`id`, `nome`, `costo`, `immagine`, `categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `sl_plans`
+-- Table structure for table `sl_plans`
 --
 
 CREATE TABLE `sl_plans` (
@@ -293,7 +320,7 @@ CREATE TABLE `sl_plans` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `specifichetecniche`
+-- Table structure for table `specifichetecniche`
 --
 
 CREATE TABLE `specifichetecniche` (
@@ -304,7 +331,7 @@ CREATE TABLE `specifichetecniche` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `specifichetecniche`
+-- Dumping data for table `specifichetecniche`
 --
 
 INSERT INTO `specifichetecniche` (`id`, `device`, `nome`, `descrizione`) VALUES
@@ -325,101 +352,101 @@ INSERT INTO `specifichetecniche` (`id`, `device`, `nome`, `descrizione`) VALUES
 (15, 1, 'Autonomia', 'Stand-by fino a TBD ore - Conversazione fino a TBD min');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `assistance`
+-- Indexes for table `assistance`
 --
 ALTER TABLE `assistance`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `caratteristichesl`
+-- Indexes for table `caratteristichesl`
 --
 ALTER TABLE `caratteristichesl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `categorieassistenza`
+-- Indexes for table `categorieassistenza`
 --
 ALTER TABLE `categorieassistenza`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `categoriedevice`
+-- Indexes for table `categoriedevice`
 --
 ALTER TABLE `categoriedevice`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `categorieplans`
+-- Indexes for table `categorieplans`
 --
 ALTER TABLE `categorieplans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `categoriesl`
+-- Indexes for table `categoriesl`
 --
 ALTER TABLE `categoriesl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `device`
+-- Indexes for table `device`
 --
 ALTER TABLE `device`
   ADD PRIMARY KEY (`idDevice`);
 
 --
--- Indici per le tabelle `devicecompresi`
+-- Indexes for table `devicecompresi`
 --
 ALTER TABLE `devicecompresi`
   ADD PRIMARY KEY (`device`,`sl`);
 
 --
--- Indici per le tabelle `deviceconsigliati`
+-- Indexes for table `deviceconsigliati`
 --
 ALTER TABLE `deviceconsigliati`
   ADD PRIMARY KEY (`device`,`sl`);
 
 --
--- Indici per le tabelle `faq`
+-- Indexes for table `faq`
 --
 ALTER TABLE `faq`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `filter`
+-- Indexes for table `filter`
 --
 ALTER TABLE `filter`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `plans`
+-- Indexes for table `plans`
 --
 ALTER TABLE `plans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `plans_device`
+-- Indexes for table `plans_device`
 --
 ALTER TABLE `plans_device`
   ADD PRIMARY KEY (`plans`,`device`);
 
 --
--- Indici per le tabelle `slservices`
+-- Indexes for table `slservices`
 --
 ALTER TABLE `slservices`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `sl_plans`
+-- Indexes for table `sl_plans`
 --
 ALTER TABLE `sl_plans`
   ADD PRIMARY KEY (`sl`,`plans`);
 
 --
--- Indici per le tabelle `specifichetecniche`
+-- Indexes for table `specifichetecniche`
 --
 ALTER TABLE `specifichetecniche`
   ADD PRIMARY KEY (`id`);

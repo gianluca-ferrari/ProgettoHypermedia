@@ -5,9 +5,10 @@ function loadFilter() {
      parseFilter(xhttp.responseText);
     }
   };
-  url = "../php/filter.php";
+  url = "../php/filter.php?id=";
   //url += "?tipologia=" + "" + "?marca=" + "" + "?connessione=" + "" + "?fotocamera=" + "" + "?display=" + "";
-  xhttp.open("GET", url , true);
+  var id = location.search.split('id=')[1];
+  xhttp.open("GET", url+id , true);
   xhttp.send();
 }
 
