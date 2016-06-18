@@ -5,7 +5,8 @@ function loadCategories() {
      parseCategories(xhttp.responseText);
     }
   };
-  xhttp.open("GET", "../php/category.php", true);
+  var id = location.search.split('id=')[1];
+  xhttp.open("GET", "../php/category.php?id="+id, true);
   xhttp.send();
 }
 
@@ -16,7 +17,7 @@ function parseCategories(response) {
 
     for(i = 0; i < arr.length; i++) {
        out += "<div class=\"container categorybox\">";
-            out += "<img src=\"../img/" + arr[i].name + ".jpg\" class=\"img-responsive\">";
+            out += "<img src=\"../img/" + arr[i].immagine + "\" class=\"img-responsive\">";
             out += "<div>";
                 out += "<button type=\"button\" class=\"btn btn-default categorybutton\" onclick=\"window.location='devices.html?id=" +  arr[i].id + "'\">" + arr[i].name + "</a></button>";
             out += "</div></div>";

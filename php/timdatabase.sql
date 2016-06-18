@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2016 at 04:16 PM
+-- Generation Time: Jun 18, 2016 at 10:18 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -58,6 +58,34 @@ INSERT INTO `caratteristichesl` (`id`, `nome`, `immagine`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categorie`
+--
+
+CREATE TABLE `categorie` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `categoria` int(11) NOT NULL,
+  `immagine` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `name`, `categoria`, `immagine`) VALUES
+(1, 'smartphone', 1, 'smartphone.jpg'),
+(2, 'smartwatch', 1, 'smartwatch.jpg'),
+(3, 'tablet', 1, 'tablet.jpg'),
+(4, 'smart living', 1, 'smart living.jpg'),
+(5, 'promotions', 1, 'promotions.jpg'),
+(6, 'TV & Entertaiment', 2, 'tventertainment.jpg'),
+(7, 'TIM Games', 2, 'timgames.jpg'),
+(8, 'TIM Reading', 2, 'timreading.jpg'),
+(9, 'Health & Wellness', 2, 'healthandwellness.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categorieassistenza`
 --
 
@@ -66,62 +94,6 @@ CREATE TABLE `categorieassistenza` (
   `nome` text NOT NULL,
   `immagine` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categoriedevice`
---
-
-CREATE TABLE `categoriedevice` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `categoriedevice`
---
-
-INSERT INTO `categoriedevice` (`id`, `name`) VALUES
-(1, 'smartphone'),
-(2, 'smartwatch'),
-(3, 'tablet'),
-(4, 'smart living'),
-(5, 'promotions');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categorieplans`
---
-
-CREATE TABLE `categorieplans` (
-  `id` int(11) NOT NULL,
-  `nome` text NOT NULL,
-  `immagine` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categoriesl`
---
-
-CREATE TABLE `categoriesl` (
-  `id` int(11) NOT NULL,
-  `nome` text NOT NULL,
-  `immagine` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `categoriesl`
---
-
-INSERT INTO `categoriesl` (`id`, `nome`, `immagine`) VALUES
-(1, 'TV & Entertaiment', 0),
-(2, 'TIM Games', 0),
-(3, 'TIM Reading', 0),
-(4, 'Health & Wellness', 0);
 
 -- --------------------------------------------------------
 
@@ -144,7 +116,7 @@ CREATE TABLE `device` (
 
 INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `descrizione`) VALUES
 (1, 'Samsung Galaxy S7', 829.9, '../img/samsungs7.jpg', 1, 'Samsung Galaxy S7 Edge è uno smarthphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati!'),
-(2, 'Apple iPad Pro 9.7" 128 GB', 1019.9, '../img/ipad.jpg', 3, 'Con iPad hai scoperto un mondo completamente nuovo, semplice e coinvolgente. Oggi iPad Pro, con la tecnologia Multi-Touch perfezionata, il suo grande display Retina da 12.9" e prestazioni della CPU quasi raddoppiate rispetto a iPad Air 2, è pronto ad allargare ancora una volta i tuoi orizzonti!'),
+(2, 'iPad Pro 9.7" 128 GB', 1019.9, '../img/ipad.jpg', 3, 'Con iPad hai scoperto un mondo completamente nuovo, semplice e coinvolgente. Oggi iPad Pro, con la tecnologia Multi-Touch perfezionata, il suo grande display Retina da 12.9" e prestazioni della CPU quasi raddoppiate rispetto a iPad Air 2, è pronto ad allargare ancora una volta i tuoi orizzonti!'),
 (3, 'Apple iPhone 6', 989.9, '../img/iphone.jpg', 1, 'iPhone 6 non è solo più grande: è ancora migliore, da ogni punto di vista. Più grande, eppure più sottile. Più potente, ma attento nei consumi. È una nuova generazione di iPhone.\r\n'),
 (4, 'Microsoft Lumia 950', 689.9, '../img/lumia950.jpg', 1, 'Microsoft Lumia 950 è uno cellulare Touchscreen avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.2 pollici e di una risoluzione da 2560x1440 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo Microsoft Lumia 950 sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
 (5, 'LG G5', 559.9, '../img/lgg5.jpg', 1, 'LG G5 è uno smartphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati. Dispone di un grande display da 5.3 pollici e di una risoluzione da 2560x1440 pixel, fra le più elevate attualmente in circolazione. Le funzionalità offerte da questo LG G5 sono innumerevoli e tutte al top di gamma. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. '),
@@ -152,7 +124,39 @@ INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `des
 (7, 'Nexus 5x', 499.9, '../img/nexus5x.jpg', 1, 'LG Nexus 5X è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.2 pollici e di una risoluzione da 1920x1080 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo LG Nexus 5X sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
 (8, 'Yotaphone 2 32Gb', 390.9, '../img/yotaphone.jpg', 1, 'YotaPhone 2 è un smartphone Android di buon livello, fortemente votato all''imaging, in grado di soddisfare anche l''utente più esigente. Dispone di un grande display Touchscreen da 5 pollici con una risoluzione di 1920x1080 pixel. Sul versante delle funzionalità a questo YotaPhone 2 non manca davvero nulla. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. '),
 (9, 'Asus ZenPhone 2', 299.9, '../img/asus.jpg', 1, 'Asus ZenFone 2 ZE551ML è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.5 pollici e di una risoluzione da 1920x1080 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo Asus ZenFone 2 ZE551ML sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
-(10, 'Samsung Galaxy A3', 199.9, '../img/galaxia3.jpg', 1, 'Samsung Galaxy A3 è un smartphone Android completo, che non ha molto da invidare ai dispositivi più avanzati. Dispone di un display Touchscreen da 4.5 pollici con una risoluzione di 960x540 pixel non particolarmente elevata. Sul versante delle funzionalità a questo Samsung Galaxy A3 non manca davvero nulla. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. ');
+(10, 'Samsung Galaxy A3', 199.9, '../img/galaxia3.jpg', 1, 'Samsung Galaxy A3 è un smartphone Android completo, che non ha molto da invidare ai dispositivi più avanzati. Dispone di un display Touchscreen da 4.5 pollici con una risoluzione di 960x540 pixel non particolarmente elevata. Sul versante delle funzionalità a questo Samsung Galaxy A3 non manca davvero nulla. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. '),
+(11, 'Huawey Mediapad', 429.9, '../img/huaweymediapad.jpg', 3, ''),
+(12, 'Huawey Mediapad 10', 659.9, '../img/huawey10.jpg', 3, ''),
+(13, 'Acer ICONIA', 399.9, '../img/acericonia.jpg', 3, ''),
+(14, 'Alcatel One Touch', 299.9, '../img/alcatel.jpg', 3, ''),
+(15, 'Galaxy TAB A 64 GB', 829.9, '../img/samsungstaba.jpg', 3, ''),
+(16, 'iPad Pro 9.7" 256 GB', 1229.9, '../img/ipad.jpg', 3, ''),
+(17, 'iPad Pro 9.7" 64 GB', 629.9, '../img/ipad.jpg', 3, ''),
+(18, 'Galaxy TAB A 64 GB', 999.9, '../img/samsungstaba.jpg', 3, ''),
+(19, 'Sony Smartband', 129.9, '../img/sony.jpg', 2, ''),
+(20, 'Samsung Galaxy Gear', 229.9, '../img/galaxygear7.jpg', 2, ''),
+(21, 'Samsung Galaxy Fit', 189.9, '../img/galaxyfit.jpg', 2, ''),
+(22, 'PolarHR', 169.9, '../img/polar.jpg', 2, ''),
+(23, 'Loop H7 HR', 49.9, '../img/looph7.jpg', 2, ''),
+(24, 'Ihealth HS5', 99.9, '../img/ihealth.jpg', 2, ''),
+(25, 'D-Link Smart Home', 129.9, '../img/dlink.jpg', 4, ''),
+(26, 'SPhilips Friends of Hue', 229.9, '../img/philips.jpg', 4, ''),
+(27, 'Samsung Galaxy VR', 179.9, '../img/samsungsgalaxyvr.jpg', 4, ''),
+(28, 'Beats', 139.9, '../img/beats.jpg', 4, ''),
+(29, 'Samsung Smart TV', 79.9, '../img/samsungssmarttv.jpg', 4, ''),
+(30, 'Sandisk Falsh Drive WIFI', 239.9, '../img/sandisk.jpg', 4, ''),
+(31, 'Samsung Galaxy S7', 829.9, '../img/samsungs7.jpg', 5, 'Samsung Galaxy S7 Edge è uno smarthphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati!'),
+(32, 'iPad Pro 9.7" 128 GB', 1019.9, '../img/ipad.jpg', 5, 'Con iPad hai scoperto un mondo completamente nuovo, semplice e coinvolgente. Oggi iPad Pro, con la tecnologia Multi-Touch perfezionata, il suo grande display Retina da 12.9" e prestazioni della CPU quasi raddoppiate rispetto a iPad Air 2, è pronto ad allargare ancora una volta i tuoi orizzonti!'),
+(33, 'Apple iPhone 6', 989.9, '../img/iphone.jpg', 5, 'iPhone 6 non è solo più grande: è ancora migliore, da ogni punto di vista. Più grande, eppure più sottile. Più potente, ma attento nei consumi. È una nuova generazione di iPhone.\r\n'),
+(34, 'Asus ZenPhone 2', 299.9, '../img/asus.jpg', 5, 'Asus ZenFone 2 ZE551ML è uno smartphone Android avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.5 pollici e di una risoluzione da 1920x1080 pixel che è la più elevata attualmente in circolazione. Le funzionalità offerte da questo Asus ZenFone 2 ZE551ML sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. '),
+(35, 'Samsung Galaxy A3', 199.9, '../img/galaxia3.jpg', 5, 'Samsung Galaxy A3 è un smartphone Android completo, che non ha molto da invidare ai dispositivi più avanzati. Dispone di un display Touchscreen da 4.5 pollici con una risoluzione di 960x540 pixel non particolarmente elevata. Sul versante delle funzionalità a questo Samsung Galaxy A3 non manca davvero nulla. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS. '),
+(36, 'Sony Smartband', 129.9, '../img/sony.jpg', 5, ''),
+(37, 'Samsung Galaxy Gear', 229.9, '../img/galaxygear7.jpg', 5, ''),
+(38, 'Samsung Galaxy Fit', 189.9, '../img/galaxyfit.jpg', 5, ''),
+(39, 'Ihealth HS5', 99.9, '../img/ihealth.jpg', 5, ''),
+(40, 'D-Link Smart Home', 129.9, '../img/dlink.jpg', 5, ''),
+(41, 'SPhilips Friends of Hue', 229.9, '../img/philips.jpg', 5, ''),
+(42, 'Samsung Galaxy VR', 179.9, '../img/samsungsgalaxyvr.jpg', 5, '');
 
 -- --------------------------------------------------------
 
@@ -371,84 +375,6 @@ ALTER TABLE `caratteristichesl`
 -- Indexes for table `categorieassistenza`
 --
 ALTER TABLE `categorieassistenza`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `categoriedevice`
---
-ALTER TABLE `categoriedevice`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `categorieplans`
---
-ALTER TABLE `categorieplans`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `categoriesl`
---
-ALTER TABLE `categoriesl`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `device`
---
-ALTER TABLE `device`
-  ADD PRIMARY KEY (`idDevice`);
-
---
--- Indexes for table `devicecompresi`
---
-ALTER TABLE `devicecompresi`
-  ADD PRIMARY KEY (`device`,`sl`);
-
---
--- Indexes for table `deviceconsigliati`
---
-ALTER TABLE `deviceconsigliati`
-  ADD PRIMARY KEY (`device`,`sl`);
-
---
--- Indexes for table `faq`
---
-ALTER TABLE `faq`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `filter`
---
-ALTER TABLE `filter`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `plans`
---
-ALTER TABLE `plans`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `plans_device`
---
-ALTER TABLE `plans_device`
-  ADD PRIMARY KEY (`plans`,`device`);
-
---
--- Indexes for table `slservices`
---
-ALTER TABLE `slservices`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sl_plans`
---
-ALTER TABLE `sl_plans`
-  ADD PRIMARY KEY (`sl`,`plans`);
-
---
--- Indexes for table `specifichetecniche`
---
-ALTER TABLE `specifichetecniche`
   ADD PRIMARY KEY (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
