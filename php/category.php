@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$id = $_GET["id"];
+$id = $_GET[("id")];
 $query = "SELECT name, id, immagine FROM categorie where categoria =".$id;
 $sql = $query;
 $result = $conn->query($sql);

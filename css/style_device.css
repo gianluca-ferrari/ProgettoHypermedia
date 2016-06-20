@@ -60,6 +60,10 @@
     padding-top: 4px;
 }
 
+p{
+    padding: 15px;
+}
+
 btn-block.focus {
   color: #333;
   background-color: #e6e6e6;

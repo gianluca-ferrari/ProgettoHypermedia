@@ -16,16 +16,14 @@ function parseDevices(response) {
     var out = "";
     var position;
     var id = location.search.split('id=')[1];
-    if(id == 1)
-        position = "Smarthphone";
-    if(id == 2)
-        position = "Tablet";
-    if(id == 3)
-        position = "Smartwatch";
-    if(id == 4)
-        position = "Smart living";
-    if(id == 5)
-        position = "Promotions";
+    if(id == 6)
+        position = "TV & Entertainment";
+    if(id == 7)
+        position = "TIM Games";
+    if(id == 8)
+        position = "TIM Reading";
+    if(id == 9)
+        position = "Health & Wellness";
     out += "<h1 class = \"category_title\">" + position + "</h1>";
     for(i = 0; i < arr.length; i++) {
         out += "<div class=\"col-sm-4\">";
@@ -48,6 +46,6 @@ function loadBreadcumbs(){
     }
   };
   var id = location.search.split('id=')[1];
-  xhttp.open("GET", "../php/breadcumbs_device.php?id=" + id, true);
+  xhttp.open("GET", "../php/breadcumbs_sl.php?id=" + id, true);
   xhttp.send();
 }
