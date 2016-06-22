@@ -1,3 +1,5 @@
+$(document).ready(loadHeader());
+
 function loadHeader() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

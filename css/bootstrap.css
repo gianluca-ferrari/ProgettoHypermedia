@@ -1223,6 +1223,7 @@ h2,
 .h2,
 h3,
 .h3 {
+  color: #004990;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -3006,7 +3007,7 @@ select[multiple].input-lg {
   text-align: center;
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 2px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -5047,6 +5048,7 @@ a.thumbnail.active {
   margin-bottom: 0;
 }
 .alert > p + p {
+  margin-top: 5px;
   margin-top: 5px;
 }
 .alert-dismissable,

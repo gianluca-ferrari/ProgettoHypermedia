@@ -3,9 +3,9 @@
     if($id == 1)
         $position = "Smarthphone";
     if($id == 2)
-        $position = "Tablet";
-    if($id == 3)
         $position = "Smartwatch";
+    if($id == 3)
+        $position = "Tablet";
     if($id == 4)
         $position = "Smart living";
     if($id == 5)

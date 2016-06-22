@@ -4,25 +4,14 @@
     <meta charset="UTF-8">
     <title>TIM - Progetto Hypermedia</title>
     <meta name="author" content="Gianluca Ferrari, Diego Gaboardi, Andrea Facchini">
+    <script src = "../script/jquery-3.0.0.js"></script>
+    <script src = "../script/header.js"></script>
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 
-<body>
-    <header>
-        <div class="wrapper">
-            <a href="index.html"><img src="../img/tim_logo.png" class="logo"></a>
-            <a href="#" class="hamburger"></a>
-            <nav>
-                <ul>
-                    <li><a href="#">Plans</a></li>
-                    <li><a href="#">Devices</a></li>
-                    <li><a href="#">Smart Life</a></li>
-                    <li><a href="#">Assistance</a></li>
-                    <li><a href="#">Who We Are</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body onload = "loadHeader()">
+    <header id="header"></header>
 </body>
 
 </html>

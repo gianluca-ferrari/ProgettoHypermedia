@@ -10,6 +10,6 @@
         $position = "Health & Wellness";
     $out = "";
     $out = $out."<p> &nbsp";
-        $out = $out."<a class=\"breadcumbs\" href=\"categorie.html?id=1\">SL Services</a> &nbsp ->  &nbsp ".$position."</p>";
+        $out = $out."<a class=\"breadcumbs\" href=\"categorie.html?id=2\">SL Services</a> &nbsp ->  &nbsp ".$position."</p>";
     echo $out;
 ?>

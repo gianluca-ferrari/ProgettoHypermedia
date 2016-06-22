@@ -1,3 +1,5 @@
+$(document).ready(loadFilter());
+
 function loadFilter() {
   var xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

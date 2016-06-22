@@ -1,3 +1,5 @@
+$(document).ready(loadCategories());
+
 function loadCategories() {
   var xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Devices</title>
     <meta name="author" content="Gianluca Ferrari, Diego Gaboardi, Andrea Facchini">
+    <script src = "../script/jquery-3.0.0.js"></script>
     <script src = "../script/header.js"></script>
     <script src = "../script/loaderCategories.js"></script>
     <link rel="stylesheet" href="../css/category.css">
@@ -12,12 +13,8 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 
-<body onload = "loadHeader()">
-     <header onload="loadCategories()" id="header"></header>  
-    
-    <script language="javascript">
-            Event.observe(this, 'load', loadCategories());    
-    </script>
+<body>
+     <header id="header"></header>  
     <div id="category"> </div>
 </body>
     
