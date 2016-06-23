@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "timdatabase";
+$database = "my_facchiniferrarigaboardi";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);

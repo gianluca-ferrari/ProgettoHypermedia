@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $id = $_GET[("id")];
-$query = "SELECT sl FROM devicecompresi where device=".$id;
+$query = "SELECT nome FROM deviceconsigliati, device WHERE idDevice=device and sl=".$id;
 $sql = $query;
 $result = $conn->query($sql);
 

@@ -38,7 +38,7 @@ function loadDevice(){
     }
   };
   var id = location.search.split('id=')[1];
-  xhttp.open("GET", "../php/device_consigliati.php?id=" + id , true);
+  xhttp.open("GET", "../php/device_sl.php?id=" + id , true);
   xhttp.send();
 }
 
@@ -47,7 +47,7 @@ function parseCaratteristiche(response)
     var arr = JSON.parse(response);
     var out = "";
     out += "<h2>" + arr[0].nome + "</h2>";
-    out += "<h3 >Caratteristiche</h3> <hr class='line'> <p>" + arr[0].descrizione + "</p>";
+    out += "<h3 >Caratteristiche</h3> <hr class='line'> <p>" + arr[0].specifiche + "</p>";
     return out;
 }
 
@@ -70,7 +70,7 @@ function parseConsigliato(response)
     for(i = 0; i < arr.length; i++)
         {
             out += "                     <div class= \"col-sm-6\"> "; 
-            out += "                         <button type=\"button\" class=\"btn btn-default btn-block button-disabled\" disabled=disabled>" + arr[i].device + "</button> "; 
+            out += "                         <button type=\"button\" class=\"btn btn-default btn-block button-disabled\" disabled=disabled>" + arr[i].nome + "</button> "; 
             out += "                     </div> "; 
         }
     out += "                 </div> ";

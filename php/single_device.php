@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "timdatabase";
+$database = "my_facchiniferrarigaboardi";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $id = $_GET[("id")];
-$query = "SELECT nome, costo, immagine, categoria, descrizione FROM device where idDevice=".$id;
+$query = "SELECT nome, costo, immagine, categoria,descrizione, specifiche FROM device where idDevice=".$id;
 $sql = $query;
 $result = $conn->query($sql);
 
