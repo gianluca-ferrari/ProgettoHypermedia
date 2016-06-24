@@ -1,0 +1,32 @@
+.textmoving{
+    background: #0000ff;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+}
+
+.texttitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+    color: #ffffff;
+}
+
+.fibraimg{
+    margin-top: 50px;
+    width: 110%;
+    height: 403px;
+}
+
+textonimage{
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 250%;
+    position: absolute; 
+   top: 60px; 
+   left: 50 px; 
+   width: 100%; 
+    text-decoration: underline;
+    background: rgba(0, 0, 255, 0.5);
+    background-size: 90%;
+}
