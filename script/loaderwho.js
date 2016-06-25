@@ -1,6 +1,7 @@
 $(document).ready(loadWho());
 $(document).ready(loadTestimonials());
 
+
 function loadWho() {
   var xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -19,9 +20,10 @@ function loadTestimonials() {
      document.getElementById("teste").innerHTML = parseCategories(xhttp.responseText);
     }
   };
-  xhttp.open("GET", "../php/whoweare.php", true);
+  xhttp.open("GET", "../php/whoweare.php?tipo=0", true);
   xhttp.send();
 }
+
 
 
 function parseCategories(response) {
@@ -39,6 +41,5 @@ function parseCategories(response) {
     }
     out +="<div class=\"col-xs-3\"></div>";
      return out;
-
 }
     

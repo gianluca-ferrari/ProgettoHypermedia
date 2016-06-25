@@ -11,7 +11,9 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$query = "SELECT nome, img, frase FROM sferette WHERE tipo = 0";
+
+$tipo = $_GET[("tipo")];
+$query = "SELECT nome, img, frase FROM sferette WHERE tipo =".$tipo;
 $sql = $query;
 $result = $conn->query($sql);
 
