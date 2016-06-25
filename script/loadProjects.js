@@ -18,11 +18,11 @@ function parseCategories(response) {
     var out = "";
     for(i = 0; i < arr.length; i++) {
         out +="<div class=\"col-xs-4\">";
-        out += "<div class=\"testimonialsname\">- " + arr[i].nome + "</div><hr>";   
-        out += "<div >";
-        out += "<img src=\"" + arr[i].img + "\" class=\"testimonialsimg\">";
+        out += "<div class=\"projectsname\">" + arr[i].nome + "</div><hr>";   
+        out += "<div class=\"projectsimg\">";
+        out += "<img src=\"" + arr[i].img + "\" class=\"projectsimg\" align=\"middle\">";
         out += "</div><hr>";
-        out += "<div class=\"testimonialsquote\">" + arr[i].frase + "</div>";        
+        out += "<div class=\"projectsquote\">" + arr[i].frase + "</div>";        
 
         out += "</div>";
     }

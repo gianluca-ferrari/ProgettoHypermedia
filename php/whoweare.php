@@ -20,10 +20,12 @@ $result = $conn->query($sql);
 $myArray = array();
 if ($result -> num_rows> 0) {
     while($row = $result->fetch_assoc()) {
+        $row["frase"] = mb_convert_encoding($row["frase"], "UTF-8", "auto");
         $myArray[] = $row;
     }
 }
 
 echo JSON_encode($myArray);
+
 $conn->close();
 ?>

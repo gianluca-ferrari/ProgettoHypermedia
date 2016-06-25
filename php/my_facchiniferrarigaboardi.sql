@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 25, 2016 alle 11:04
+-- Creato il: Giu 25, 2016 alle 14:23
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
@@ -328,9 +328,10 @@ INSERT INTO `plans_device` (`plans`, `device`) VALUES
 --
 
 CREATE TABLE `sferette` (
+  `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
-  `frase` varchar(5000) NOT NULL,
+  `frase` varchar(5000) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `tipo` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -338,13 +339,13 @@ CREATE TABLE `sferette` (
 -- Dump dei dati per la tabella `sferette`
 --
 
-INSERT INTO `sferette` (`nome`, `img`, `frase`, `tipo`) VALUES
-('Piero Angela', '../img/PieroAngela.png', '"The Future is Now"', 0),
-('Marcello Macchia', '../img/macchia.png', '"Only the Best"', 0),
-('Sigmund Roy', '../img/SigmundRoy.png', '"Innovation is the key of Perfection"', 0),
-('Infrastrutture', '../img/fibra.png', 'Da 20 anni Telecom Italia si impegna per migliorare l''infrastruttura italiana per i servizi di rete e internet, migliorando la rete esistente con sempre nuove tecnologie. \r\n\r\nIl nostro obiettivo è di portare la velocità della fibra in tutto il territorio nazionale.', 1),
-('TIM YOUNG Projects', '../img/hackaton.png', 'TIM è attiva nella promozione e nell''incentivo dei giovani ad entrare in contatto con il mondo dell''IT, finanziando e organizzando numerosi eventi, come l''Hackaton di Milano, il Summer Festival di Rimini e l''8B Music Festival di Urbino', 1),
-('Reti Mobile', '../img/AntennaLTE.png', 'Lavoriamo per migliorare la copertura delle reti mobili, e disponiamo della più ampia copertura 4G d''Italia. ', 1);
+INSERT INTO `sferette` (`id`, `nome`, `img`, `frase`, `tipo`) VALUES
+(1, 'Piero Angela', '../img/PieroAngela.png', '"The Future is Now"', 0),
+(2, 'Marcello Macchia', '../img/macchia.png', '"Only the Best"', 0),
+(3, 'Sigmund Roy', '../img/SigmundRoy.png', '"Innovation is the key of Perfection"', 0),
+(4, 'Infrastrutture', '../img/fibra.png', 'Da 20 anni Telecom Italia si impegna per migliorare l''infrastruttura italiana per i servizi di rete e internet, migliorando la rete esistente con sempre nuove tecnologie. \r\n\r\nIl nostro obiettivo e'' di portare la velocita'' della fibra in tutto il territorio nazionale.', 1),
+(5, 'TIM YOUNG Projects', '../img/hackaton.png', 'TIM e'' attiva nella promozione e nell''incentivo dei giovani ad entrare in contatto con il mondo dell''IT, finanziando e organizzando numerosi eventi, come l''Hackaton di Milano, il Summer Festival di Rimini e l''8B Music Festival di Urbino', 1),
+(6, 'Reti Mobile', '../img/AntennaLTE.png', 'Lavoriamo per migliorare la copertura delle reti mobili, e disponiamo della piu'' ampia copertura 4G d''Italia. \r\n\r\nNell''ambito della telefonia mobile con il termine 4G (acronimo di 4th (fourth) Generation) si indicano relativamente a tale campo, le tecnologie e gli standard di quarta generazione successivi a quelli di terza generazione, che permettono quindi applicazioni multimediali avanzate e collegamenti dati con elevata banda passante.', 1);
 
 --
 -- Indici per le tabelle scaricate
@@ -394,6 +395,21 @@ ALTER TABLE `plans`
 ALTER TABLE `plans_device`
   ADD UNIQUE KEY `plans` (`plans`,`device`);
 
+--
+-- Indici per le tabelle `sferette`
+--
+ALTER TABLE `sferette`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `sferette`
+--
+ALTER TABLE `sferette`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
