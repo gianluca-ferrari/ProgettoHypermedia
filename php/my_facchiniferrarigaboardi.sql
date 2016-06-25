@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 23, 2016 alle 11:11
+-- Creato il: Giu 25, 2016 alle 11:04
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
@@ -320,6 +320,31 @@ INSERT INTO `plans_device` (`plans`, `device`) VALUES
 (1, 47),
 (2, 1),
 (2, 47);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `sferette`
+--
+
+CREATE TABLE `sferette` (
+  `nome` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `frase` varchar(5000) NOT NULL,
+  `tipo` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `sferette`
+--
+
+INSERT INTO `sferette` (`nome`, `img`, `frase`, `tipo`) VALUES
+('Piero Angela', '../img/PieroAngela.png', '"The Future is Now"', 0),
+('Marcello Macchia', '../img/macchia.png', '"Only the Best"', 0),
+('Sigmund Roy', '../img/SigmundRoy.png', '"Innovation is the key of Perfection"', 0),
+('Infrastrutture', '../img/fibra.png', 'Da 20 anni Telecom Italia si impegna per migliorare l''infrastruttura italiana per i servizi di rete e internet, migliorando la rete esistente con sempre nuove tecnologie. \r\n\r\nIl nostro obiettivo è di portare la velocità della fibra in tutto il territorio nazionale.', 1),
+('TIM YOUNG Projects', '../img/hackaton.png', 'TIM è attiva nella promozione e nell''incentivo dei giovani ad entrare in contatto con il mondo dell''IT, finanziando e organizzando numerosi eventi, come l''Hackaton di Milano, il Summer Festival di Rimini e l''8B Music Festival di Urbino', 1),
+('Reti Mobile', '../img/AntennaLTE.png', 'Lavoriamo per migliorare la copertura delle reti mobili, e disponiamo della più ampia copertura 4G d''Italia. ', 1);
 
 --
 -- Indici per le tabelle scaricate
