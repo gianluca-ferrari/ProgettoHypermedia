@@ -12,17 +12,17 @@ function loadHeader(position) {
 
 function createHeader(position)
 {
-    var cl1="", cl2="", cl3="", cl4="", cl5="";
+    var cl1="", cl2=" ", cl3=" ", cl4=" ", cl5="";
     if(position == "1")
-        cli1=" class=active ";
+        cl1+=" " + " class='active' ";
     if(position == "2")
-        cli2=" class=active ";
+        cl2+=" " + " class='active' ";
     if(position == "3")
-        cli3=" class=active ";
+        cl3+=" " +" class='active' ";
     if(position == "4")
-        cli4=" class=active ";
+        cl4+=" " +" class='active' ";
     if(position == "5")
-        cli5=" class=active ";
+        cl5=" " +" class='active' ";
     
      var out="";
         out += "<nav class=\"navbar navbar-default col-sm-12\">";

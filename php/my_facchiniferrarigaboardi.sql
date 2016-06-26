@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 25, 2016 alle 14:23
+-- Creato il: Giu 26, 2016 alle 18:01
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
@@ -140,7 +140,7 @@ INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `des
 (43, 'Well Up', 3.9, '../img/wllup.jpg', 9, '', 0, ''),
 (44, 'Run App', 2.9, '../img/runapp.jpg', 9, '', 0, ''),
 (45, 'Serie A', 1.9, '../img/seriea.jpg', 9, '', 0, ''),
-(47, 'Netflix', 15.9, '../img/netflix.jpg', 6, '', 1, 'Guarda film e programmi TV su Netflix online o direttamente su smart TV, console per videogiochi, PC, Mac, cellulare, tablet e molti altri dispositivi.'),
+(47, 'Netflix', 15.9, '../img/netflix.jpg', 6, '', 1, 'Serie originali, commedie, drammi e programmi per bambini, puoi guardare le tue serie TV e film preferiti in streaming istantaneo sul dispositivo che preferisci. L''offerta TV che aspettavamo da tempo per la grande varieta'' dei contenuti, da vedere quando e dove vuoi con qualita'' della Rete TIM e senza vincoli, disponibile direttamente sulla TV di casa anche attraverso il decoder TIMvision con la qualita'' HD.</br>Con TIM accedi al mondo Netflix in maniera facile e immediata con il decoder TIMvision. Per i clienti TIM non occorre alcuna carta di credito per Netflix. Paghi comodamente sulla fattura TIM e mantieni sotto controllo le spese. Puoi guardare Netflix in qualsiasi momento, senza interruzioni pubblicitarie. Un''esperienza facile e veloce con tre pacchetti da scegliere in abbonamento.'),
 (46, 'TIM Vision', 5.9, '../img/timvision.jpg', 6, '', 0, ''),
 (48, 'TIM Sky', 20.9, '../img/timsky.jpg', 6, '', 0, ''),
 (49, 'TIM Premium', 7.9, '../img/timpremium.jpg', 6, '', 0, ''),
