@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Giu 29, 2016 alle 22:34
+-- Creato il: Giu 29, 2016 alle 23:27
 -- Versione del server: 10.1.13-MariaDB
 -- Versione PHP: 5.6.21
 
@@ -88,15 +88,15 @@ CREATE TABLE `device` (
   `descrizione` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `disponibile` int(11) NOT NULL,
   `specifiche` text CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `highlights` text NOT NULL
+  `vetrina` varchar(800) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `device`
 --
 
-INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `descrizione`, `disponibile`, `specifiche`, `highlights`) VALUES
-(1, 'Samsung Galaxy S7', 829.9, '../img/Samsung Galaxy S7.jpg', 1, 'Samsung Galaxy S7 Edge ? uno smarthphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati!', 1, 'Tecnologia 4G cat.9/HSDPA42UMTS/EDGE/GPRS Frequenze 850/900/1800/1900/2100<br>\n                    Connettivita Wi-Fi - Bluetooth - Micro USB - NFC<br>\n                    GPS Integrato <br>\n                    Display 5.5? 16 Milioni colori Touch<br>\n                    Fotocamera 12 Mpixel/Flash<br>\n                    Memoria Interna 32GB <br>\n                    Processore OctaCore: (QuadCore 2.3 Ghz+QuadCore 1.6 Ghz)<br>\n                    Formato SIM Nano <br>\n                    Video Video Recorder&Playback <br>\n                    Musica MP3 Player <br>\n                    In dotazione Caricabatteria - Cavo Dati MicroUSB - Auricolare stereo - Guida di riferimento rapido <br>\n                    Dimensioni 150,9x72,6x7,7 mm <br>\n                    Peso 157 gr. <br>\n                    Autonomia(*) Stand-by fino a TBD ore - Conversazione fino a TBD min <br>\n                    Note\n                    * Le prestazioni delle batterie dipendono da vari fattori tra cui la vicinanza delle antenne, lo stato delle batterie, la posizione geografica e il tipo di rete utilizzata.', 'Abbiamo fatto grandi progressi, superando i limiti odierni e rendendo possibile quello che finora era impossibile, ascoltando sempre i vostri suggerimenti. Abbiamo trovato un perfetto equilibrio tra forma e tecnologia, sviluppando funzioni mai viste nei Galaxy precedenti, e di cui non potrete più farne a meno. Galaxy S7 e S7 edge.\r\n\r\n'),
+INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `descrizione`, `disponibile`, `specifiche`, `vetrina`) VALUES
+(1, 'Samsung Galaxy S7', 829.9, '../img/Samsung Galaxy S7.jpg', 1, 'Samsung Galaxy S7 Edge ? uno smarthphone Android con caratteristiche all''avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati!', 1, 'Tecnologia 4G cat.9/HSDPA42UMTS/EDGE/GPRS Frequenze 850/900/1800/1900/2100<br>\n                    Connettivita Wi-Fi - Bluetooth - Micro USB - NFC<br>\n                    GPS Integrato <br>\n                    Display 5.5? 16 Milioni colori Touch<br>\n                    Fotocamera 12 Mpixel/Flash<br>\n                    Memoria Interna 32GB <br>\n                    Processore OctaCore: (QuadCore 2.3 Ghz+QuadCore 1.6 Ghz)<br>\n                    Formato SIM Nano <br>\n                    Video Video Recorder&Playback <br>\n                    Musica MP3 Player <br>\n                    In dotazione Caricabatteria - Cavo Dati MicroUSB - Auricolare stereo - Guida di riferimento rapido <br>\n                    Dimensioni 150,9x72,6x7,7 mm <br>\n                    Peso 157 gr. <br>\n                    Autonomia(*) Stand-by fino a TBD ore - Conversazione fino a TBD min <br>\n                    Note\n                    * Le prestazioni delle batterie dipendono da vari fattori tra cui la vicinanza delle antenne, lo stato delle batterie, la posizione geografica e il tipo di rete utilizzata.', 'Abbiamo fatto grandi progressi, superando i limiti odierni e rendendo possibile quello che finora era impossibile, ascoltando sempre i vostri suggerimenti. Abbiamo trovato un perfetto equilibrio tra forma e tecnologia, sviluppando funzioni mai viste nei Galaxy precedenti, e di cui non potrete piu'' farne a meno. Galaxy S7 e S7 edge.\r\n\r\n'),
 (2, 'iPad Pro 9.7" 128 GB', 1019.9, '../img/ipad.jpg', 3, 'Con iPad hai scoperto un mondo completamente nuovo, semplice e coinvolgente. Oggi iPad Pro, con la tecnologia Multi-Touch perfezionata, il suo grande display Retina da 12.9" e prestazioni della CPU quasi raddoppiate rispetto a iPad Air 2, ? pronto ad allargare ancora una volta i tuoi orizzonti!', 1, '', ''),
 (3, 'Apple iPhone 6', 989.9, '../img/iphone.jpg', 1, 'iPhone 6 non ? solo pi? grande: ? ancora migliore, da ogni punto di vista. Pi? grande, eppure pi? sottile. Pi? potente, ma attento nei consumi. ? una nuova generazione di iPhone.\r\n', 0, '', ''),
 (4, 'Microsoft Lumia 950', 689.9, '../img/lumia950.jpg', 1, 'Microsoft Lumia 950 ? uno cellulare Touchscreen avanzato e completo sotto tutti i punti di vista con alcune eccellenze. Dispone di un grande display da 5.2 pollici e di una risoluzione da 2560x1440 pixel che ? la pi? elevata attualmente in circolazione. Le funzionalit? offerte da questo Microsoft Lumia 950 sono veramente tante e all''avanguardia. A cominciare dal modulo LTE 4G che permette un trasferimento dati e una navigazione in internet eccellente. ', 0, '', ''),
@@ -141,7 +141,7 @@ INSERT INTO `device` (`idDevice`, `nome`, `costo`, `immagine`, `categoria`, `des
 (43, 'Well Up', 3.9, '../img/wllup.jpg', 9, '', 0, '', ''),
 (44, 'Run App', 2.9, '../img/runapp.jpg', 9, '', 0, '', ''),
 (45, 'Serie A', 1.9, '../img/seriea.jpg', 9, '', 0, '', ''),
-(47, 'Netflix', 15.9, '../img/netflix.jpg', 6, '', 1, 'Guarda film e programmi TV su Netflix online o direttamente su smart TV, console per videogiochi, PC, Mac, cellulare, tablet e molti altri dispositivi.', ''),
+(47, 'Netflix', 15.9, '../img/netflix.jpg', 6, '', 1, 'Guarda film e programmi TV su Netflix online o direttamente su smart TV, console per videogiochi, PC, Mac, cellulare, tablet e molti altri dispositivi.', 'Il software di streaming di Netflix permette di guardare istantaneamente i contenuti disponibili utilizzando qualsiasi dispositivo connesso a Internet su cui e'' installata l''app Netflix. Il software puo'' variare a seconda del dispositivo e del mezzo di trasmissione e anche le funzionalita'' possono variare da un dispositivo all''altro. Ad esempio, il software puo'' essere incorporato sul dispositivo compatibile con Netflix oppure può essere disponibile come app da scaricare (caso dei dispositivi Apple iPad).'),
 (46, 'TIM Vision', 5.9, '../img/timvision.jpg', 6, '', 0, '', ''),
 (48, 'TIM Sky', 20.9, '../img/timsky.jpg', 6, '', 0, '', ''),
 (49, 'TIM Premium', 7.9, '../img/timpremium.jpg', 6, '', 0, '', ''),

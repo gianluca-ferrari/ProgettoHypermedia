@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $id = $_GET[("id")];
-$query = "SELECT name, id, immagine FROM categorie where categoria =".$id;
+$query = "SELECT name, id, immagine FROM categorie WHERE categoria =".$id;
 $sql = $query;
 $result = $conn->query($sql);
 

@@ -7,7 +7,7 @@ function loadHeader(position) {
       document.getElementById('footer').innerHTML = createFooter();
       }
    };
-    xhttp.open("GET", "../php/category.php", true);
+    xhttp.open("GET", "../php/category.php?id=1", true);
     xhttp.send();
 }
 

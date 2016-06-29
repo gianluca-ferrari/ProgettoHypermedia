@@ -12,9 +12,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+$id = $_GET[("id")];
+
+$query = "SELECT idDevice, nome, immagine, vetrina, disponibile FROM device WHERE idDevice=".$id;
 
 
-$query = "SELECT idDevice, nome, immagine, highlights FROM device WHERE idDevice=1";
 
 $sql = $query;
 $result = $conn->query($sql);
@@ -22,6 +24,7 @@ $result = $conn->query($sql);
 $myArray = array();
 if ($result -> num_rows> 0) {
     while($row = $result->fetch_assoc()) {
+        $row["vetrina"] = mb_convert_encoding($row["vetrina"], "UTF-8", "auto");
         $myArray[] = $row;
     }
 }
