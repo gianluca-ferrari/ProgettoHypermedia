@@ -8,7 +8,7 @@ function loadHome() {
      parseHome(xhttp.responseText);
     }
   };
-  xhttp.open("GET", "../php/index.php?id=1", true);
+  xhttp.open("GET", "http://facchiniferrarigaboardi.altervista.org/php/index.php?id=1", true);
   xhttp.send();
 }
 
@@ -19,7 +19,7 @@ function loadHome2() {
      parseHome2(xhttp.responseText);
     }
   };
-  xhttp.open("GET", "../php/index.php?id=47", true);
+  xhttp.open("GET", "http://facchiniferrarigaboardi.altervista.org/php/index.php?id=47", true);
   xhttp.send();
 }
 
