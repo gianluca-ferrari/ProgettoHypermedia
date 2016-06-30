@@ -8,7 +8,7 @@ function loadCategories() {
     }
   };
   var id = location.search.split('id=')[1];
-  xhttp.open("GET", "../php/category.php?id="+id, true);
+  xhttp.open("GET", "http://facchiniferrarigaboardi.altervista.org/php/category.php?id="+id, true);
   xhttp.send();
 }
 
