@@ -1,0 +1,75 @@
+.category_title {
+  color: #004990;
+  text-align: center;
+}
+
+h3{
+  color: #004990;
+}
+
+
+.panel_filter {
+  margin-bottom: 20px;
+  background: rgba(99, 151, 208, 0.2);
+  border: 3px solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel_box {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.line
+{
+    color: #004990;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+.device_title{
+  font-size: 2em;
+  color: #004990;
+  text-align: center;
+}
+
+.img_device {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 0px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+
+.filter_category{
+    color: #004990;
+    text-align: center;
+}
+
+.filter_title{
+    text-align: center;
+    color: #004990;
+    padding-top: 4px;
+}
+
+p{
+    padding: 15px;
+}
+
+.prezzo{
+    color: red;
+    text-align: right;
+    font-size: 25px;
+}
